@@ -6,4 +6,5 @@ MAINTAINER Marian Sievers <info@mariansievers.de>
 RUN dnf update -y
 
 # install munin
-RUN dnf install -y munin munin-node 
+RUN dnf install -y munin munin-node
+COPY munin.conf /etc/munin/munin.conf
