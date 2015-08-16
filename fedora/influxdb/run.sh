@@ -7,10 +7,12 @@ INFLUX_HOST="localhost"
 INFLUX_API_PORT="8086"
 INFLUX_API_URL="http://${INFLUX_HOST}:${INFLUX_API_PORT}"
 
+CONFIG_FILE="/config/config.toml"
+
 
 # start influxdb
 echo "Start InfluxDB"
-exec /opt/influxdb/influxd &
+exec /opt/influxdb/influxd -config=${CONFIG_FILE} &
 
 #wait for the startup of influxdb
 RET=1
